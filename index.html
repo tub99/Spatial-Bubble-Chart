@@ -1,0 +1,34 @@
+<head>
+	<script type="text/javascript" src="js/Chart.js"></script>
+	<script type="text/javascript" src="js/ChartManager.js"></script>
+	<script type="text/javascript" src="js/data/ChartData.js"></script>
+		<script type="text/javascript" src="js/lib/raphael.js"></script>
+	<script type="text/javascript" src="js/data/BigData.js"></script>
+	<script type="text/javascript" src="js/data/WorldData.js"></script>
+	<script type="text/javascript" src="js/data/VeryBigData.js"></script>
+	<style>
+		#tooltip{
+	        display: none;
+	        background-color:blue;
+	        padding: 5px;
+	        position: absolute;
+	        opacity: 1;
+	        color:white;
+	        border: 1px;
+	        
+	    }
+	</style>
+</head>
+<body id="myBody">
+	
+	<div id="canvas"></div>
+	<div id="tooltip"></div>
+	<script type="text/javascript">
+		var client = new WorldData();
+		var data=client.getData();
+		var paper = Raphael(document.getElementById('canvas'), 1500, 1500);
+		var manager=  new ChartManager(1500,1500,data,paper,"tooltip");
+	</script>
+</body>
+
+
